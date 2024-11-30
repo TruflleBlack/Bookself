@@ -1,0 +1,324 @@
+/* Reset default styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F3F3E0;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+  
+/* Header styling */
+header {
+    background-color: #608BC1;
+    color: #fff;
+    text-align: center;
+    padding: 1.5em 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 2.2em;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+/* Main container styling */
+main {
+    padding: 2em 1em;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Form container */
+form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 1.5em;
+    margin-bottom: 2em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+    margin-bottom: 1em;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 0.7em;
+    margin-top: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Checkbox styling */
+/* Checkbox styling */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.checkbox-input {
+    display: none; /* Sembunyikan checkbox asli */
+}
+
+.checkbox-label {
+    position: relative;
+    padding-left: 35px; /* Ruang untuk custom checkbox */
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.checkbox-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    border: 2px solid #608BC1; /* Warna border */
+    border-radius: 4px; /* Sudut bulat */
+    background-color: #fff; /* Warna latar belakang */
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.checkbox-input:checked + .checkbox-label::before {
+    background-color: #608BC1; /* Warna saat dicentang */
+    border-color: #608BC1; /* Warna border saat dicentang */
+    box-shadow: 0 0 5px rgba(96, 139, 193, 0.5), 0 0 10px rgba(96, 139, 193, 0.5); /* Bayangan saat dicentang */
+}
+
+.checkbox-input:checked + .checkbox-label {
+    color: #fff; /* Warna teks saat dicentang */
+}
+
+.checkbox-input:checked + .checkbox-label::after {
+    content: '✔'; /* Centang saat dicentang */
+    position: absolute;
+    left: 6px; /* Posisi centang */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #fff; /* Warna centang */
+    transition: opacity 0.3s ease;
+}
+
+/* Form button */
+button {
+    background-color: #133E87;
+    color: #fff;
+    border: none;
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+button:hover {
+    background-color: #608BC1;
+}
+
+button .fa {
+    font-size: 1.2em;
+}
+
+/* Section titles */
+section h2 {
+    font-size: 1.8em;
+    margin-bottom: 1em;
+    border-bottom: 2px solid #608BC1;
+    padding-bottom: 0.3em;
+    color: #608BC1;
+}
+
+/* Book list styling */
+#incompleteBookList,
+#completeBookList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5em;
+    margin-bottom: 2em;
+}
+
+[data-testid="bookItem"] {
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 10 px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-testid="bookItem"]:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+[data-testid="bookItem"] h3 {
+    font-size: 1.3em;
+    margin-bottom: 0.5em;
+}
+
+[data-testid="bookItem"] p {
+    margin: 0.5em 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+[data-testid="bookItem"] img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 1em;
+    object-fit: cover;
+    max-height: 150px;
+}
+
+[data-testid="bookItem"] div {
+    margin-top: 1em;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5em;
+}
+
+[data-testid="bookItem"] button {
+    font-size: 0.9em;
+    padding: 0.5em 0.8em;
+}
+
+/* Special buttons */
+[data-testid="bookItemDeleteButton"] {
+    background-color: #dc3545;
+}
+
+[data-testid="bookItemDeleteButton"]:hover {
+    background-color: #c82333;
+}
+
+[data-testid="bookItemEditButton"] {
+    background-color: #ffc107;
+}
+
+[data-testid="bookItemEditButton"]:hover {
+    background-color: #e0a800;
+}
+
+/* Toast notification */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 1em 1.5em;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(100px);
+    transition: all 0.4s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* Dark mode */
+body.dark-mode {
+    background-color: #1e1e2f;
+    color: #f4f4f9;
+}
+
+body.dark-mode header {
+    background-color: #29293d;
+}
+
+body.dark-mode form,
+body.dark-mode #incompleteBookList,
+body.dark-mode #completeBookList {
+    background-color: #29293d;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode button {
+    background-color: #444;
+    color: #ddd;
+}
+
+body.dark-mode button:hover {
+    background-color: #333;
+}
+
+body.dark-mode [data-testid="bookItem"] {
+    background-color: #333;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode [data-testid="bookItem"] p {
+    color: #bbb;
+}
+
+.modal {
+    display: none; /* Sembunyikan modal secara default */
+    position: fixed; /* Tetap di tempat */
+    z-index: 1; /* Di atas konten lainnya */
+    left: 0;
+    top: 0;
+    width: 100%; /* Lebar penuh */
+    height: 100%; /* Tinggi penuh */
+    overflow: auto; /* Jika diperlukan, tambahkan scroll */
+    background-color: rgb(0,0,0); /* Warna latar belakang */
+    background-color: rgba(0,0,0,0.4); /* Warna latar belakang dengan transparansi */
+}
+  
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% dari atas dan tengah */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Lebar modal */
+}
+  
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
