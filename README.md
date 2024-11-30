@@ -38,3 +38,28 @@ Aplikasi **Bookshelf App** adalah aplikasi untuk mengelola koleksi buku, di mana
 
 ## Struktur Direktori
 
+/Bookshelf-App
+├── index.html        # Halaman utama aplikasi
+├── style.css         # Styling aplikasi
+├── main.js           # Logika aplikasi dan penyimpanan data
+└── README.md         # Dokumentasi proyek
+
+## Instalasi
+
+Untuk menjalankan aplikasi ini, cukup buka file `index.html` di browser Anda:
+
+1. Clone repository atau download file.
+2. Buka file `index.html` di browser.
+
+Tidak perlu instalasi tambahan, karena aplikasi ini hanya menggunakan HTML, CSS, dan JavaScript yang berjalan di browser.
+
+## Kontribusi
+
+Jika Anda ingin berkontribusi pada proyek ini, Anda dapat:
+1. Fork repository ini.
+2. Buat branch baru untuk perubahan Anda.
+3. Buat pull request dengan penjelasan mengenai perubahan yang dilakukan.
+
+## Lisensi
+
+Proyek ini bersifat open-source dan dapat digunakan sesuai dengan kebutuhan Anda. Tidak ada lisensi khusus yang diberikan pada proyek ini.
